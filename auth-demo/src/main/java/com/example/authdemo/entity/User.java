@@ -1,14 +1,14 @@
 package com.example.authdemo.entity;
 
-import com.example.authdemo.dto.RoleDto;
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.Set;
 
 @Entity
 @Table(name = "users")
-public class User {
+public class User implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +18,7 @@ public class User {
     private String username;
 
     @Column(nullable = false)
-    private String password;
+    private transient String password;
 
     @Column(nullable = false)
     private String email;

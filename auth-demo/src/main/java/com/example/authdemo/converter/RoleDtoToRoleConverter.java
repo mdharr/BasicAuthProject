@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 @Component
 public class RoleDtoToRoleConverter implements Converter<RoleDto, Role> {
 
-    private AuthorityDtoToAuthorityConverter converter;
+    private final AuthorityDtoToAuthorityConverter converter;
 
     public RoleDtoToRoleConverter(AuthorityDtoToAuthorityConverter converter) {
         this.converter = converter;
